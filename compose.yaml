@@ -1,0 +1,15 @@
+# 開発用PostgreSQL（本番はKamalのaccessoryで別管理）
+services:
+  db:
+    image: postgres:17
+    environment:
+      POSTGRES_USER: nijiarchive
+      POSTGRES_PASSWORD: nijiarchive
+    ports:
+      # 5432は他プロジェクトのローカルDBと衝突するため5433を使う
+      - "127.0.0.1:5433:5432"
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
+volumes:
+  db-data:
