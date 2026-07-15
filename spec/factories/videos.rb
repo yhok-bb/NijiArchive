@@ -1,6 +1,5 @@
 FactoryBot.define do
   factory :video do
-    title { "MyString" }
-    status { 1 }
+    title { "テスト動画" }
   end
 end
