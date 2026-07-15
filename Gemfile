@@ -40,9 +40,16 @@ gem "thruster", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
+# S3-compatible client for Cloudflare R2 (Presigned URL / HLS artifacts)
+gem "aws-sdk-s3", "~> 1", require: false
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
+
+  # BDD-style testing framework [https://rspec.info]
+  gem "rspec-rails"
+  gem "factory_bot_rails"
 
   # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
   gem "brakeman", require: false
